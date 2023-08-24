@@ -10,13 +10,20 @@
 // 'supportFile' configuration option.
 //
 // You can read more here:
-// https://on.cypress.io/configuration
-// ***********************************************************
+require('./commands');
+import "@shelex/cypress-allure-plugin";
+// eslint-disable-next-line no-unused-vars
+Cypress.on('uncaught:exception', (err) => {
+  return false;
+});
 
-// Import commands.js using ES2015 syntax:
-
-import './commands'
-import 'cypress-xpath';
-
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+// Hide fetch/XHR requests from command log
+if (Cypress.config('hideXHRInCommandLog')) {
+  const app = window.top;
+  if (app && !app.document.head.querySelector('[data-hide-command-log-request]')) {
+    const style = app.document.createElement('style');
+    style.innerHTML = '.command-name-request, .command-name-xhr { display: none }';
+    style.setAttribute('data-hide-command-log-request', '');
+    app.document.head.appendChild(style);
+  }
+}

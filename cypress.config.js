@@ -10,6 +10,9 @@ module.exports = defineConfig({
 
     //asagidaki kodlar cypress ekranında sitenin buyuklugunu ayarliyor
     viewportWidth:1280,
-    viewportHeight:720
+    viewportHeight:720,
+    defaultCommandTimeout: 20000,
+  chromeWebSecurity: false,
+  fixturesFolder: false
   },
 });

@@ -26,4 +26,4 @@ Use this command :
 
 yarn run cypress run
 Cypress run dashbord :
-npx cypress run --record --key 6fa8d161-716f-48df-8b21-5e04b96cb6e4
+npx cypress run --record --key 6fa8d161-716f-48df-8b21-5e04b96cb6e4# Appium_Youtube

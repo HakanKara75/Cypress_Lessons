@@ -10,18 +10,18 @@ describe("Ürün Ara, Fiyata Göre Sırala ve Sepete Ekle", function() {
 
     });
 
-    it('Sayfanin en altina in ve A propos goruldugunu dogrula', ()=>{
+    it('Sayfanin en altina in ve About goruldugunu dogrula', ()=>{
         cy.wait(2000)
-        cy.scrollTo("bottom");
+        cy.get(':nth-child(3) > .wt-hide-xs').scrollIntoView()
         cy.get(':nth-child(3) > .wt-hide-xs').should('contain', 'About')
         cy.contains('About').should('be.visible');
 
        
     });
 
-    it('Urun ara', function() {
-           cy.scrollTo("top")
-    cy.wait(2000);
+    it('Urun ara', ()=> {
+        cy.wait(2000);
+        cy.get('.wt-z-index-4 > .wt-grid > .wt-list-unstyled').scrollIntoView()
     cy.get('#global-enhancements-search-query').type('bracelet{enter}')
    //cy.contains("Accepter").click()
         
@@ -38,7 +38,7 @@ describe("Ürün Ara, Fiyata Göre Sırala ve Sepete Ekle", function() {
 
     cy.wait(2000);
     siralamaSecenekleri.forEach((secenek) => {
-        cy.get('#sortby > .wt-menu__body')
+        cy.get('[data-menu-title-selected-option=""]')
         .contains(secenek)
         .should('be.visible')
         .then(()=> {

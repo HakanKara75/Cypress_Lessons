@@ -1,0 +1,4 @@
+/*
+BU CLASS kullanilacak static degiskenlerin depolandigi yerdir.
+Bu classtaki degiskenleri cy.fixtures(email) seklinde yazacagiz
+*/

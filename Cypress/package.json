@@ -1,23 +1,31 @@
 {
-    "name": "cypress-cucumber-test-example",
+    "name": "CypressLessons",
     "version": "1.0.0",
     "description": "This is a simple project that demonstrates e2e testing with using cypress.io and cucumber.js",
     "main": "index.js",
     "devDependencies": {
+      "@badeball/cypress-cucumber-preprocessor": "^12.1.0",
       "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
       "@cucumber/cucumber": "^8.7.0",
+      "@cypress/browserify-preprocessor": "^3.0.1",
+      "@cypress/webpack-preprocessor": "5.14.0",
       "@faker-js/faker": "^7.6.0",
-      "cypress": "^11.0.1",
+      "@shelex/cypress-allure-plugin": "^2.34.0",
+      "@types/mocha": "7.0.2",
+      "@types/node": "^16.9.1",
+      "allure-commandline": "^2.20.1",
+      "cypress": "^12.0.2",
+      "cypress-cucumber-preprocessor": "^4.2.0",
+      "cypress-iframe": "^1.0.1",
+      "cypress-xpath": "^1.8.0",
       "esbuild": "^0.15.12",
       "eslint": "^8.27.0",
+      "eslint-config-prettier": "8.5.0",
       "eslint-plugin-chai-friendly": "^0.7.2",
-      "eslint-plugin-cypress": "^2.12.1",
+      "eslint-plugin-cypress": "2.12.1",
+      "eslint-plugin-prettier": "4.2.1",
+      "mocha-allure-reporter": "^1.4.0",
       "prettier": "^2.7.1",
-      "@cypress/browserify-preprocessor": "^3.0.1",
-      "@shelex/cypress-allure-plugin": "^2.17.1",
-      "@types/node": "^16.9.1",
-      "allure-commandline": "^2.13.8",
-      "cypress-cucumber-preprocessor": "^4.2.0",
       "resolve": "^1.20.0",
       "typescript": "^4.4.3"
     },
@@ -25,30 +33,28 @@
       "stepDefinitions": "cypress/e2e/step_definitions/**/*.{js,ts}"
     },
     "scripts": {
-      "test": "cypress run --e2e --browser chrome --spec **/*.feature",
-      "pretty": "prettier --write \"./**/*.{yml,js,jsx,json}\"",
-      "cy:open": "cypress open --e2e --browser chrome",
-      "cy:run": "cypress run --env allure=true",
-      "allure:report": "allure generate allure-results --clean -o allure-report",
-      "allure:open": "allure open allure-report",
-      "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
-      "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true"
+      "cy:run": "cypress run — env allure=true",
+      "clean:folders": "rm -R -f allure-report/* && rm -R -f allure-results/*",
+      "allure:report": "npm run allure generate allure-results — clean -o allure-report && allure open allure-report",
+      "beforetest": "npm run clean:folders",
+      "tests": "npm run cy:run || npm run aftertest",
+      "aftertest": "npm run allure:report",
+      "cypress:open": "cypress open",
+      "test": "npx cypress run --config specPattern=cypress/e2e/results/*.cy.js,video=false",
+      "test:debug": "npx cypress open --config specPattern=cypress/e2e/results/*.test.js,video=false",
+      "test:prepare:basic": "DEBUG=allure-plugin* node cypress/scripts/runner basic",
+      "cy:dashboad": "npx cypress run --record --key 6fa8d161-716f-48df-8b21-5e04b96cb6e4",
+      "cy:clientLogin": "cypress run --spec \"C:\\Users\\maruf\\IdeaProjects\\CypressAllureAlltricks\", --reporter mocha-allure-reporter",
+      "report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report",
+      "test:allure": "npm run cy:clientLogin && npm run report:allure"
     },
     "repository": {
       "type": "git"
-  
     },
     "keywords": [
       "cypress",
       "cucumber"
     ],
-    "author": "Hakan Tetik",
-    "license": "MIT",
-    "bugs": {
-  
-    },
-  
-    "dependencies": {
-      "@badeball/cypress-cucumber-preprocessor": "^13.0.3"
-    }
+    "author": "Hakan Kara",
+    "bugs": {}
   }

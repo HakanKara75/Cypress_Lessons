@@ -7,8 +7,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: 'https://www.cimri.com/',
-    //https://www.amazon.com.tr/
+    baseUrl: 'https://www.google.com/',
 
     //asagidaki kodlar cypress ekranında sitenin buyuklugunu ayarliyor
     viewportWidth:1280,

@@ -22,11 +22,20 @@ it('Search Test', ()=>{
     cy.get('textarea[name="q"]').type('Cypress.io{enter}');
 
 })
-
-it('Search Test', ()=>{
+//skip metodu testi yapmadan gecer
+it.skip('Search Test', ()=>{
     cy.get('#APjFqb', {timeout:3000}).type('Cypress.io{enter}')
+    //cy.get('#APjFqb', {timeout:3000}).type('Cypress.io').type('{enter}')
     
 })
 
 
  })
+
+ describe("Örnek Test", () => {
+  //only sadece bu testi calistirir
+    it.only("Sayfa Başlığını Konsola Yazdır", () => {
+      cy.visit("https://www.amazon.com");
+      cy.logPageTitle();
+    });
+  });

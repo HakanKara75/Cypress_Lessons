@@ -21,6 +21,11 @@ Ornegin login komutunu parametreli yapmis asagida. Boylece cagrilip kullanilabil
 
 
   })
+  Cypress.Commands.add("logPageTitle", () => {
+    cy.title().then((title) => {
+      cy.log(`Page title: ${title}`);
+    });
+  });
 //
 //
 // -- This is a child command --

@@ -7,11 +7,11 @@ describe('Selector Examples', () => {
     //By Tagname
     cy.get('input')
 
-    //By id
+    //By id   de basina # koyulur
     cy.get('#twotabsearchtextbox')
 
-    //By class
-    cy.get('nav-input nav-progressive-attribute')
+    //By class   da basina . koyulur
+    cy.get('.nav-input nav-progressive-attribute')
 
     //By Attribute name and value
     cy.get("input[type='text']")

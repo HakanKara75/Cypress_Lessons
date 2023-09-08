@@ -15,7 +15,14 @@ describe('HoverOVer', () => {
     cy.wait(2000)
     })
     
+    it.only('Test Case 1', ()=>{
+        cy.visit('https://www.kitapyurdu.com/')
     
+        //trigger mause locate ustunde bekler
+       // cy.get('.icp-nav-link-inner').trigger('mouseover')
+       
+    
+        })
    
     
     

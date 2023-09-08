@@ -2,7 +2,7 @@
 describe('Before After', () => { 
     
     before(() => {
-    cy.log('Her test dosyasindan once 1 kere calisacak')
+    cy.log('Her test dosyasindan once 1 kere calisacak') //log Java'daki System.out.print() yerine gecer
         
     })
 

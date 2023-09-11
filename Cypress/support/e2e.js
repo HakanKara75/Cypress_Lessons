@@ -12,6 +12,7 @@
 // You can read more here:
 require('./commands');
 import "@shelex/cypress-allure-plugin";
+import 'cypress-iframe'; //veya  require('cypress-iframe'); ===> iframe icin
 // eslint-disable-next-line no-unused-vars
 Cypress.on('uncaught:exception', (err) => {
   return false;

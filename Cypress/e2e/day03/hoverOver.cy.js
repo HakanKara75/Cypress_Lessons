@@ -20,7 +20,7 @@ describe('HoverOVer', () => {
     //cy.get('.a-dropdown-container > .a-button > .a-button-inner > .a-button-text').select('Turkey (Türkiye)', {force: true})
     cy.wait(2000)
     })
-    
+
  
    
     

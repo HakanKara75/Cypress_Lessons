@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 {//chrome da olabilecek hatalari onler
   "chromeWebSecurity"; false
+  
 }
 module.exports = defineConfig({
   e2e: {
@@ -8,7 +9,8 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     baseUrl: 'https://qa-environment.koalaresorthotels.com/',
-
+    //asagidaki kod en ufak degisiklikte run etmesini engelliyor
+    watchForFileChanges: true,
     //asagidaki kodlar cypress ekranında sitenin buyuklugunu ayarliyor
     viewportWidth:1280,
     viewportHeight:720,
@@ -16,6 +18,7 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   //custom command kullanabilmek icin fixture false silinip yol yapistirilmali
   fixturesFolder: "C:/Users/Hakan Batirhan.DESKTOP-KA8SOKR/Desktop/Cypress/Cypress/fixtures"
+  
   },
 
 });

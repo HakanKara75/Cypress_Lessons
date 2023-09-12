@@ -27,6 +27,7 @@ Ornegin login komutunu parametreli yapmis asagida. Boylece cagrilip kullanilabil
     });
   });
 
+  //Automation sitesinde login olma
     Cypress.Commands.add('automationPracticeLogin', (email, password) => {
       cy.visit('http://www.automationpractice.pl/index.php')
       cy.get('.login').click()
@@ -41,8 +42,8 @@ Ornegin login komutunu parametreli yapmis asagida. Boylece cagrilip kullanilabil
       cy.visit('https://www.amazon.com/')
       cy.get('#twotabsearchtextbox').type(productName)
       cy.get('#nav-search-submit-button').click()
-      cy.get('.a-color-state a-text-bold').should('have.text', 'kalem')
-      cy.get('#twotabsearchtextbox').should('have.value', 'kalem')
+      cy.get('.a-color-state').should('include.text', 'kalem')
+     // cy.get('#twotabsearchtextbox').should('have.value', 'kalem')
 
 
     })

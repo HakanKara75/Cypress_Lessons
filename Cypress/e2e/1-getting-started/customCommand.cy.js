@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
+
 describe('Custom Command 1', () => { 
-    
+
     it('Positive Test 1', ()=>{
         cy.visit('http://www.automationpractice.pl/index.php')
         cy.get('.login').click()
@@ -28,6 +29,7 @@ describe('Custom Command 1', () => {
     
         it.only('Amazon Urun Arama Test', ()=>{
             cy.amazonSearch('kalem')
-           
+
+            cy.screenshot()
             })
      })

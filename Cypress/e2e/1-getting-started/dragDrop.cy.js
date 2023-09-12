@@ -12,11 +12,11 @@ describe('Drag And Drop', () => {
 
     cy.get('#column-a').drag('#column-b')
     //.then((success) => {
-   //     assert(success)
-  //  })
+     //assert(success)
+ // })
     })
     
-    it('Drag and Drop Test 2', ()=>{
+    it.only('Drag and Drop Test 2', ()=>{
         const dataTransfer=new DataTransfer();
         cy.visit('https://the-internet.herokuapp.com/drag_and_drop')
        

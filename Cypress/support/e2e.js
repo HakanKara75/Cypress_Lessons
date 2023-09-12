@@ -13,6 +13,7 @@
 require('./commands');
 import "@shelex/cypress-allure-plugin";
 import 'cypress-iframe'; //veya  require('cypress-iframe'); ===> iframe icin
+require('@4tw/cypress-drag-drop')  //drag drop icin
 // eslint-disable-next-line no-unused-vars
 Cypress.on('uncaught:exception', (err) => {
   return false;

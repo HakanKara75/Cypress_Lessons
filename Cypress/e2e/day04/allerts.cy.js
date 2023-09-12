@@ -3,9 +3,10 @@ describe('Allerts', () => {
     
     it('Allert Test', ()=>{
     cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
-
+   
     //cypress bu komut ile butonu tiklar. cikan allerti otomatik olarak handle eder.
     cy.get(':nth-child(1) > button').click()
+  
     //cypress otomatik olarak tamam butonuna tiklar.
     cy.get('#result').should('have.text', 'You successfully clicked an alert')
 
@@ -15,9 +16,9 @@ describe('Allerts', () => {
     
     it('Accept Allert Test', ()=>{
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
-
+       
         cy.get(':nth-child(2) > button').click()
-
+       
         //cypress otomatik olarak tamam butonuna tiklar.
         //cy.get('#result').should('have.text','You clicked: Ok')
 
@@ -26,9 +27,9 @@ describe('Allerts', () => {
     
     it('Dismiss Allert Test', ()=>{
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
-
+        cy.wait(3000)
         cy.get(':nth-child(2) > button').click()
-
+        cy.wait(3000)
         //cypress otomatik olarak tamam butonuna tiklar. Bunun yerine iptal tiklamak icin asagidaki kod yazilir
         cy.on('window:confirm', ()=>{
         return false

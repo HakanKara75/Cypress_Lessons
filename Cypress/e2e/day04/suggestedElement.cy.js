@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe('Suggeste Element', () => { 
+describe('Suggested Element', () => { 
     
     it('Test Case 1', ()=>{
         cy.visit('http://www.automationpractice.pl/index.php')

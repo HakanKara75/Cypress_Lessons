@@ -26,8 +26,26 @@ Ornegin login komutunu parametreli yapmis asagida. Boylece cagrilip kullanilabil
       cy.log(`Page title: ${title}`);
     });
   });
-//
-//
+
+    Cypress.Commands.add('automationPracticeLogin', (email, password) => {
+      cy.visit('http://www.automationpractice.pl/index.php')
+      cy.get('.login').click()
+
+    cy.get('#email').type(email)
+    cy.get('#passwd').type(password)
+    cy.get('#SubmitLogin > span').click()
+    })
+  
+    //Amazon Arama: Girilen urun icin arama
+    Cypress.Commands.add('amazonSearch', (productName) => {
+      cy.visit('https://www.amazon.com/')
+      cy.get('#twotabsearchtextbox').type(productName)
+      cy.get('#nav-search-submit-button').click()
+      cy.get('.a-color-state a-text-bold').should('have.text', 'kalem')
+      cy.get('#twotabsearchtextbox').should('have.value', 'kalem')
+
+
+    })
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //

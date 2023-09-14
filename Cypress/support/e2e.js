@@ -11,6 +11,7 @@
 //
 // You can read more here:
 require('./commands');
+import './commands'
 import "@shelex/cypress-allure-plugin";
 import 'cypress-iframe'; //veya  require('cypress-iframe'); ===> iframe icin
 require('@4tw/cypress-drag-drop')  //drag drop icin

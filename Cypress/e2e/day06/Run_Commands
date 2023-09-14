@@ -1,0 +1,41 @@
+npx cypress run: electron deadless (browser acmadan) ile butun testleri calistirir.
+                hata alinan testlerin ekran goruntulerini screenshots klasorune koyar.
+                butun testlerin video kayitlarini da videos klasorune koyar.
+
+npx cypress info: bilgisayarda yuklu browser bilgilerini, cypress versiyonunu,
+                isletim sistemini, hafiza bilgilerini vb. bilgileri gosterir.
+
+npx cypress verify: cypress in yuklu oldugunu dogrular.
+
+npx cypress run --browser chrome    : chrome headless(browser acmadan) ile butun testleri calistirir.
+
+npx cypress run --browser chrome --headed   : chrome brower i acarak butun testleri calistirir.
+
+ISTENEN  KLASORDEKİ  BUTUN TESTLERI  CALISTIRMAK
+npx cypress run --spec 'cypress/e2e/day02/'
+*default olarak electron ile calisir.
+
+npx cypress run --spec 'cypress/e2e/day02/' --browser chrome
+*day02 klasorundeki butun testleri chrome headless (browser acmadan) ile calistirir
+
+npx cypress run --spec 'cypress/e2e/day02/' --browser chrome --headed
+*day02 klasorundeki butun testleri chrome browser acarak calistirir
+
+TEK  BIR  TESTI  CALISTIRMAK
+npx cypress run --spec 'cypress/e2e/day02/assertion.cy.js'
+*default olarak electron ile calisir.
+
+npx cypress run --spec 'cypress/e2e/day02/assertion.cy.js' --browser chrome
+*bu testi chrome headless (browser acmadan) ile calistirir.
+
+npx cypress run --spec 'cypress/e2e/day02/assertion.cy.js' --browser chrome --headed
+*bu testi chrome acarak calistirir.
+
+CALISTIRMAK ICIN KOD TANIMLAMA
+package.json dosyasi icindeki script bolumune kendi belirleyecegimiz calistirma komutu yazabiliriz
+
+"cy:specialRun": "npx cypress run --spec 'cypress/e2e/day02/' --browser chrome --headed"
+
+"cy:allTestRun": "npx cypress run --browser chrome"
+
+Bu komutlari terminale "npm cy:specialRun" yazip calistiririz

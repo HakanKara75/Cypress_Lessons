@@ -4,13 +4,17 @@ const { defineConfig } = require("cypress");
   
 }
 module.exports = defineConfig({
+  projectId: 'pim4q7',
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
     baseUrl: 'https://qa-environment.koalaresorthotels.com/',
+
+    //asagidaki id ve kodu cypress uzak sunucu testi icin alinip yapistiriliyor buraya
+    projectId: "pim4q7",
     //asagidaki kod en ufak degisiklikte run etmesini engelliyor
-    watchForFileChanges: true,
+    watchForFileChanges: false,
     //asagidaki kodlar cypress ekranında sitenin buyuklugunu ayarliyor
     viewportWidth:1280,
     viewportHeight:720,

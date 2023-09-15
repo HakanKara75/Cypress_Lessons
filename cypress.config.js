@@ -20,6 +20,9 @@ module.exports = defineConfig({
     viewportHeight:720,
     defaultCommandTimeout: 20000,
   chromeWebSecurity: false,
+
+  //testlerin videolarını kaydetmek icin asagidaki kod true olmali
+  "video": true,
   //custom command kullanabilmek icin fixture false silinip yol yapistirilmali
   fixturesFolder: "C:/Users/Hakan Batirhan.DESKTOP-KA8SOKR/Desktop/Cypress/Cypress/fixtures"
   
